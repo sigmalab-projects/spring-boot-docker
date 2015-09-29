@@ -94,7 +94,7 @@
                     <plugin>
                         <groupId>org.zalando.stups.org.jolokia</groupId>
                         <artifactId>docker-maven-plugin</artifactId>
-                        <version>0.13.3-zal-1</version>
+                        <version>0.13.4-zal-1</version>
                         <configuration>
                             <verbose>true</verbose>
                             <dockerHost>http://localhost:2375</dockerHost>
