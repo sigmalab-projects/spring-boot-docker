@@ -10,4 +10,4 @@ services:
 
 script:
     - psql -c 'CREATE DATABASE simple_test;' -U postgres
-    - mvn clean install --batch-mode
+    - mvn clean install -Pmaven-docker --batch-mode
