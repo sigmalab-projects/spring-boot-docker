@@ -21,7 +21,7 @@ script:
     - git config credential.helper "store --file=.git/credentials"
     - echo "https://$GH_TOKEN:@github.com" > .git/credentials
     - echo $SIGGI_PROJECT_BUILD_NUMBER
-    - mvn versions:set -DnewVersion=0.5-$SIGGI_PROJECT_BUILD_NUMBER
+    - mvn versions:set -DnewVersion=0.5-$SIGGI_PROJECT_BUILD_NUMBER --batch-mode
     - mvn clean install -Pmaven-docker --batch-mode
-    - mvn -Dtag="0.5-$SIGGI_PROJECT_BUILD_NUMBER" scm:tag
+    - mvn -Dtag="0.5-$SIGGI_PROJECT_BUILD_NUMBER" scm:tag --batch-mode
 
