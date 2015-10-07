@@ -98,6 +98,10 @@
                         <configuration>
                             <verbose>true</verbose>
                             <dockerHost>http://localhost:2375</dockerHost>
+                            <authConfig>
+                            	<username>${env.DOCKER_USER}</username>
+                            	<password>${env.DOCKER_PASSWORD}</password>
+                            </authConfig>
                             <images>
                                 <image>
                                     <name>sigmalab/spring-boot-docker-example</name>
