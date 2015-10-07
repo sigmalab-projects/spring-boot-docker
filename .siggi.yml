@@ -23,11 +23,8 @@ script:
     - echo $SIGGI_PROJECT_BUILD_NUMBER
     - mvn versions:set -DnewVersion=0.5-$SIGGI_PROJECT_BUILD_NUMBER --batch-mode
     - mvn clean install -Pmaven-docker --batch-mode
-    - echo $DOCKER_USER
-    - echo $DOCKER_PASSWORD
     - sudo docker login -e joerg.bellmann@googlemail.com -u $DOCKER_USER -p $DOCKER_PASSWORD
-    - sudo docker images
-    - mvn docker:push -pl app -Pmaven-docker -X -e
+    - sudo docker push sigmalab/spring-boot-docker-example:0.5-$SIGGI_PROJECT_BUILD_NUMBER
     - mvn scm:checkin -DpushChanges=false -Dmessage="build-by-siggi" --batch-mode
     - mvn -Dtag="0.5-$SIGGI_PROJECT_BUILD_NUMBER" scm:tag --batch-mode
 
