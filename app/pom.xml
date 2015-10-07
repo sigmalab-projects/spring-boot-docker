@@ -142,7 +142,7 @@
                                             <time>15000</time>
                                         </wait>
                                         <log>
-                                            <prefix>DEMO</prefix>
+                                            <prefix>DOCKER_LOG</prefix>
                                             <date>ISO8601</date>
                                             <color>blue</color>
                                         </log>
