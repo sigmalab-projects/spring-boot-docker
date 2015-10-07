@@ -13,6 +13,7 @@ env:
         - GIT_NAME="Joerg Bellmann"
         - GIT_EMAIL=joerg.bellmann@googlemail.com
         - CI_DEPLOY_USERNAME=jbellmann
+        - APP_VERSION=0.5-$SIGGI_PROJECT_BUILD_NUMBER
 
 script:
     - psql -c 'CREATE DATABASE simple_test;' -U postgres
@@ -21,10 +22,10 @@ script:
     - git config credential.helper "store --file=.git/credentials"
     - echo "https://$GH_TOKEN:@github.com" > .git/credentials
     - echo $SIGGI_PROJECT_BUILD_NUMBER
-    - mvn versions:set -DnewVersion=0.5-$SIGGI_PROJECT_BUILD_NUMBER --batch-mode
+    - mvn versions:set -DnewVersion=$APP_VERSION --batch-mode
     - mvn clean install -Pmaven-docker --batch-mode
-    - sudo docker login -e joerg.bellmann@googlemail.com -u $DOCKER_USER -p $DOCKER_PASSWORD
-    - sudo docker push sigmalab/spring-boot-docker-example:0.5-$SIGGI_PROJECT_BUILD_NUMBER
+    - sudo docker login -e $GIT_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - sudo docker push sigmalab/spring-boot-docker-example:$APP_VERSION
     - mvn scm:checkin -DpushChanges=false -Dmessage="build-by-siggi" --batch-mode
-    - mvn -Dtag="0.5-$SIGGI_PROJECT_BUILD_NUMBER" scm:tag --batch-mode
+    - mvn -Dtag="$APP_VERSION" scm:tag --batch-mode
 
