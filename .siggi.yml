@@ -20,4 +20,6 @@ script:
     - git config user.email "$GIT_EMAIL"
     - git config credential.helper "store --file=.git/credentials"
     - echo "https://$GH_TOKEN:@github.com" > .git/credentials
+    - echo $SIGGI_PROJECT_BUILD_NUMBER
+    - mvn versions:set -DnewVersion=0.5-$SIGGI_PROJECT_BUILD_NUMBER
     - mvn clean install -Pmaven-docker --batch-mode
