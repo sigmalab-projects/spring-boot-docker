@@ -23,3 +23,5 @@ script:
     - echo $SIGGI_PROJECT_BUILD_NUMBER
     - mvn versions:set -DnewVersion=0.5-$SIGGI_PROJECT_BUILD_NUMBER
     - mvn clean install -Pmaven-docker --batch-mode
+    - mvn -Dtag="0.5-$SIGGI_PROJECT_BUILD_NUMBER" scm:tag
+
