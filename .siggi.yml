@@ -15,6 +15,9 @@ env:
         - CI_DEPLOY_USERNAME=jbellmann
         - APP_VERSION=0.5-$SIGGI_PROJECT_BUILD_NUMBER
 
+before_install:
+    - echo $APP_VERSION
+
 script:
     - psql -c 'CREATE DATABASE simple_test;' -U postgres
     - git config user.name "$GIT_NAME"
