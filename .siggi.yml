@@ -16,15 +16,13 @@ env:
         - APP_VERSION=0.5-$SIGGI_PROJECT_BUILD_NUMBER
 
 before_install:
-    - echo "BEFORE_INSTALL $APP_VERSION"
-
-script:
     - psql -c 'CREATE DATABASE simple_test;' -U postgres
     - git config user.name "$GIT_NAME"
     - git config user.email "$GIT_EMAIL"
     - git config credential.helper "store --file=.git/credentials"
     - echo "https://$GH_TOKEN:@github.com" > .git/credentials
-    - echo $SIGGI_PROJECT_BUILD_NUMBER
+
+script:
     - mvn versions:set -DnewVersion=$APP_VERSION --batch-mode
     - mvn clean install -Pmaven-docker --batch-mode
     - sudo docker login -e $GIT_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
