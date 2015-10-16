@@ -2,5 +2,4 @@
 
 #### Java,Maven,Spring-Boot,Docker
 
-trigger build
 
