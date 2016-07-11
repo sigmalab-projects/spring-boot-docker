@@ -1,7 +1,4 @@
 language: java
-#
-# comment
-#
 
 sudo: true
 
