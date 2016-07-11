@@ -2,6 +2,3 @@
 
 #### Java,Maven,Spring-Boot,Docker
 
-more trigger
-
-status-change seems to work
