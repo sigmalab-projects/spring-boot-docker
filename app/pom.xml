@@ -106,7 +106,7 @@
                                 <image>
                                     <name>sigmalab/spring-boot-docker-example</name>
                                     <build>
-                                        <from>zalando/openjdk:8u45-b14-2</from>
+                                        <from>registry.opensource.zalan.do/stups/openjdk:8u91-b14-1-22</from>
                                         <maintainer>joerg.bellmann@sigma-lab.de</maintainer>
                                         <tags>
                                             <tag>${project.version}</tag>
