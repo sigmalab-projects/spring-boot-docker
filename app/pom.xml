@@ -107,7 +107,7 @@
 								<image>
 									<name>sigmalab/spring-boot-docker-example</name>
 									<build>
-										<from>registry.opensource.zalan.do/stups/openjdk:8-28</from>
+										<from>azul/zulu-openjdk:8u92-8.15.0.1</from>
 										<maintainer>joerg.bellmann@sigma-lab.de</maintainer>
 										<tags>
 											<tag>${project.version}</tag>
