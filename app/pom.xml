@@ -119,7 +119,7 @@
 											<!-- exec form for ENTRYPOINT -->
 											<exec>
 												<arg>java</arg>
-
+												<arg>-Djava.io.tmpdir=/app/temp</arg>
 												<arg>-jar</arg>
 												<arg>/${project.build.finalName}.${project.packaging}</arg>
 											</exec>
