@@ -107,7 +107,7 @@
 								<image>
 									<name>sigmalab/spring-boot-docker-example</name>
 									<build>
-										<from>delitescere/java:1.8.0_72</from>
+										<from>delitescere/jdk:1.8.0_72</from>
 										<maintainer>joerg.bellmann@sigma-lab.de</maintainer>
 										<tags>
 											<tag>${project.version}</tag>
